@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/pronton/.vim'
+let g:netrw_dirhist_8='/home/pronton/.vim/plugged/vim-polyglot'
+let g:netrw_dirhist_7='/home/pronton/.vim'
+let g:netrw_dirhist_6='/mnt/c/Users/trihu/Music'
+let g:netrw_dirhist_5='/mnt/c/Users/trihu/Doc/UnityGitLFS'
+let g:netrw_dirhist_4='/mnt/c/Users/trihu/Doc/UnityGitLFS/.git'
+let g:netrw_dirhist_3='/mnt/c/Users/trihu/Doc/UnityGitLFS'
+let g:netrw_dirhist_2='/mnt/c/Users/trihu/Doc/UnityGitLFS/.git'
+let g:netrw_dirhist_1='/mnt/c/Users/trihu/Doc/UnityGitLFS/fisrt temp/Assets/Plugins/LeapMotion/Core/Scripts/Algorithms'
