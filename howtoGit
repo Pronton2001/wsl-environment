@@ -2,3 +2,7 @@ cd project
 git config --global user.name "Your Name Comes Here"
 git config --global user.email you@yourdomain.example.com 
 git init
+
+Bug: Reject to push
++ Reason: different between online version and offline version
++ Solution: `git pull <origin>` to merge 2 verison before push to online.

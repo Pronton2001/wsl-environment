@@ -1,35 +1,45 @@
-" et guifont=Cascadia\ Code\ PL \ 10
+" set guifont=Cascadia\ Code\ PL \ 10
 call plug#begin('~/.vim/plugged')
-Plug 'sheerun/vim-polyglot'
+    Plug 'sheerun/vim-polyglot'
 
-Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
-Plug 'itchyny/lightline.vim'
-Plug 'preservim/nerdtree' 
-Plug 'Xuyuanp/nerdtree-git-plugin' "|
-"            \ Plug 'ryanoasis/vim-devicons'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'nvim-lua/popup.nvim'
-"Plug 'nvim-lua/plenary.nvim'
-"Plug 'nvim-telescope/telescope.nvim'
+    Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
+    Plug 'itchyny/lightline.vim'
+    Plug 'preservim/nerdtree' 
+    Plug 'Xuyuanp/nerdtree-git-plugin' "|
+    "            \ Plug 'ryanoasis/vim-devicons'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    "Plug 'nvim-lua/popup.nvim'
+    "Plug 'nvim-lua/plenary.nvim'
+    "Plug 'nvim-telescope/telescope.nvim'
 
-"Search 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'Yggdroot/indentLine'
-"or :set list lcs=tab:\|\ (here is a space)
-"Colorschemes
+    "Search 
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'Yggdroot/indentLine'
+    "or :set list lcs=tab:\|\ (here is a space)
+    "Colorschemes
 
-"Base16 themes
-Plug 'chriskempson/base16-vim'         
-Plug 'gerw/vim-hilinktrace'
-" Plug 'fatih/molokai'                  " Monokai and friends
-" Plug 'crusoexia/vim-monokai'
-" Plug 'phanviet/vim-monokai-pro'
-Plug 'patstockwell/vim-monokai-tasty'
-" Plug 'erichdongubler/vim-sublime-monokai'
-" Plug 'flazz/vim-colorschemes'          " Bunch of color schemes
-Plug 'sainnhe/sonokai'                 " Monokai Pro-like scheme
-Plug 'tanvirtin/monokai.nvim'
+    "Base16 themes
+    Plug 'chriskempson/base16-vim'         
+    Plug 'gerw/vim-hilinktrace'
+    " Plug 'fatih/molokai'                  " Monokai and friends
+    " Plug 'crusoexia/vim-monokai'
+    " Plug 'phanviet/vim-monokai-pro'
+    Plug 'patstockwell/vim-monokai-tasty'
+    " Plug 'erichdongubler/vim-sublime-monokai'
+    " Plug 'flazz/vim-colorschemes'          " Bunch of color schemes
+    Plug 'sainnhe/sonokai'                 " Monokai Pro-like scheme
+    Plug 'tanvirtin/monokai.nvim'
+
+    Plug '1612492/github.vim'
+    "
+    "Auto pair
+    Plug 'jiangmiao/auto-pairs'
+
+    "Mark down
+    Plug 'godlygeek/tabular'
+    Plug 'plasticboy/vim-markdown'
+"    Plug 'shime/vim-livedown' 
 call plug#end()
 
 set nocompatible
@@ -78,17 +88,18 @@ set diffopt+=indent-heuristic
 " Show those damn hidden characters
 " Verbose: set listchars=nbsp:¬,eol:¶,extends:»,precedes:«,trail:•
 set listchars=nbsp:¬,extends:»,precedes:«,trail:•
+
 "Searching
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set ignorecase
 set hlsearch
 set smartcase " when search become case-sensitive if it contains any capital letters.
 set incsearch " search during typing
-set nohlsearch
+"set nohlsearch
 
 " turn off search highlight
-vnoremap <C-h> :nohlsearch<cr>
-nnoremap <C-h> :nohlsearch<cr>
+vnoremap <C-e> :nohlsearch<cr>
+nnoremap <C-e> :nohlsearch<cr>
 
 " Ignore files for completion
 set wildignore+=*/.git/*,*/tmp/*,*.swp
@@ -115,9 +126,9 @@ set foldmethod=indent   " fold based on indent level
 " ============================================================================= 
 
 " Suspend with Ctrl+f
-inoremap <C-f> :sus<cr>
-vnoremap <C-f> :sus<cr>
-nnoremap <C-f> :sus<cr>
+"inoremap <C-f> :sus<cr>
+"vnoremap <C-f> :sus<cr>
+"nnoremap <C-f> :sus<cr>
 
 " highlight last inserted text
 nnoremap gV `[v`]
@@ -131,23 +142,23 @@ vnoremap <S-Tab> <
 " * FZF
 set rtp+=/usr/local/opt/fzf
 let g:fzf_layout = { 'down': '~20%' }
-nnoremap <C-P> :Files<CR>
+nnoremap <C-p> :Files<CR>
 
 " Quick-save
 nmap <leader>w :w<CR>
 nmap <leader>wq :wq<CR>
 
 " numbers
-nnoremap <Leader>1 1gt<CR>
-nnoremap <Leader>2 2gt<CR>
-nnoremap <Leader>3 3gt<CR>
+nnoremap <leader>1 1gt<CR>
+nnoremap <leader>2 2gt<CR>
+nnoremap <leader>3 3gt<CR>
 nnoremap <Leader>4 4gt<CR>
 nnoremap <Leader>5 5gt<CR>
 nnoremap <Leader>6 6gt<CR>
 nnoremap <Leader>7 7gt<CR>
 nnoremap <Leader>8 8gt<CR>
 nnoremap <Leader>9 9gt<CR>
-nnoremap <Leader>n :tabnew<CR>
+nnoremap <leader>n :tabnew<CR>
 nnoremap <Leader>x :tabclose<CR>
 
 " move up down code
@@ -158,6 +169,9 @@ inoremap <leader>k <Esc>:m .-2<CR>==gi
 vnoremap <leader>j :m '>+1<CR>gv=gv
 vnoremap <leader>k :m '<-2<CR>gv=gv
 
+" Resize windows
+nnoremap <C-up> :resize +5 <CR>
+nnoremap <C-down> :vertical resize +5<CR>
 
 " tab completion for files/bufferss
 " set wildmode=longest,list
@@ -171,7 +185,7 @@ set signcolumn=yes
 " unbind keys
 map <C-a> <Nop>
 map <C-x> <Nop>
-map <C-P> <Nop>
+"map <C-P> <Nop>
 nmap Q <Nop>
 
 " quicker window movement
@@ -191,9 +205,10 @@ let g:markdown_fenced_languages = [
 
 let g:markdown_syntax_conceal = 0
 let g:markdown_minlines = 100
-" nerdtree
+
 let mapleader=' '
-nnoremap <Leader>n :NERDTreeToggle<CR>
+" nerdtree
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 if has('termguicolors')
     set termguicolors
@@ -208,7 +223,8 @@ let g:gruvbox_material_enable_italic_comment = 1
 
 " for dark version
 set background=dark
-colorscheme gruvbox-material
+"colorscheme gruvbox-material
+colorscheme sonokai
 
 let g:gruvbox_material_transparent_background = 1
 let g:gruvbox_material_better_performance = 1
@@ -232,6 +248,8 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourself. default: 0
 
 "================================Coc-vim ===================================
+"   To choose another background color 
+highlight CocErrorFloat ctermfg=1
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
@@ -257,7 +275,7 @@ nmap <silent> <leader>gr <Plug>(coc-references)
 "To make <cr> select the first completion item and confirm the completion when no item has been selected:
 "inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 " To make coc.nvim format your code on <cr>:
-"inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 " Use <c-.> to trigger completion.
 inoremap <silent><expr> <c-.> coc#refresh()
 
@@ -317,3 +335,9 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
+
+" Markdown
+set conceallevel=2
+
+"""""""""""""""""""" Markdown """"""""""""""""""""
+"nmap gm :LivedownToggle<CR>

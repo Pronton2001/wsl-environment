@@ -1,5 +1,5 @@
-export PATH=$PATH:/home/pronton/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin
 PROMPT_DIRTRIM=1
+curl wttr.in
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
