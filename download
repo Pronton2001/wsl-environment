@@ -19,3 +19,7 @@ adwaita-icon-theme at-spi2-core fontforge-common fonts-cantarell fonts-inconsola
   libpangocairo-1.0-0 libpangoft2-1.0-0 libpixman-1-0 librest-0.7-0 librsvg2-2 librsvg2-common libsoup-gnome2.4-1 libspiro1 libthai-data
   libthai0 libuninameslist1 libwayland-cursor0 libwayland-egl1 libxcb-render0 libxcb-shm0 libxcursor1 libxkbcommon0 ubuntu-mono
 --------
+sudo apt-get install doxygen
+sudo apt-get install libx11-dev
+sudo apt-get install xorg-dev libglu1-mesa-dev
+sudo apt install mesa-utils

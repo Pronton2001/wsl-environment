@@ -1,8 +1,42 @@
-cd project
-git config --global user.name "Your Name Comes Here"
-git config --global user.email you@yourdomain.example.com 
-git init
+(): we name it, otherwise: it already have name
+<>: compulsory
+[]: optional 
 
-Bug: Reject to push
-+ Reason: different between online version and offline version
-+ Solution: `git pull <origin>` to merge 2 verison before push to online.
+For example,
+    * <(name)>  :we must name something
+    * [(name)]  :we optionally name something
+    * <name>    :we must call something by available name
+    * [name]    :we optionally call something by available name
+
+
+1. Initalization: 
+    cd project
+    git config --global user.name "<Your Name Comes Here>"
+    git config --global user.email <Your Email Comes Here>
+    git init .
+2. Track the changes:
+    git add <file> | git rm <file> | git restore <file>
+    git commit -am "<YourMessage>" | git commit -amend
+    git log --all --graph --decorate --oneline
+3. Work remotely from local repository: `branch` and `remote`
+    git remote add [-t <branch>] <(name)> <url>, i.e git remote buildApp https://github.com/SANGNGUYEN24/GoodStories_14bit.git
+    git remote -v, i.e list all available remotes
+    git remote remove [name]: Remove a remote
+    git pull <remote> <branch>, i.e git pull buildApp Tri_branch
+    git push --set-upstream buildApp master
+
+
+Bug and resolve: 
+1. Reject to push
+    * Reason: different between online version and offline version
+    * Solution: `git pull <origin>` to merge 2 verison before push to online.
+2. error: RPC failed; curl 92 HTTP/2 stream 5 was not closed cleanly before end of the underlying stream
+    * Reason: Unknown
+    * Solution: increasing http.postBuffer is valuable
+    ```sh
+    git config --global http.postBuffer 1048576000
+    ```
+
+
+
+

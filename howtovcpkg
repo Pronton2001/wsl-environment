@@ -1,0 +1,28 @@
+.\vcpkg.exe list 
+.\vcpkg.exe install zlib:x64-windows
+=================================================================
+The package zlib is compatible with built-in CMake targets:
+
+    find_package(ZLIB REQUIRED)
+    target_link_libraries(main PRIVATE ZLIB::ZLIB)
+
+---
+
+.\vcpkg.exe install sdl2 opengl --triplet=x64-windows
+=================================================================
+The package sdl2:x64-windows provides CMake targets:
+
+    find_package(SDL2 CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE SDL2::SDL2 SDL2::SDL2main)
+
+---
+
+.\vcpkg.exe integrate install                        
+
+Applied user-wide integration for this vcpkg root.
+=================================================================
+All MSBuild C++ projects can now #include any installed libraries.
+Linking will be handled automatically.
+Installing new libraries will make them instantly available.
+
+CMake projects should use: "-DCMAKE_TOOLCHAIN_FILE=C:/src/vcpkg/scripts/buildsystems/vcpkg.cmake"
