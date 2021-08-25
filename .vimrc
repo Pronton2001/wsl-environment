@@ -40,6 +40,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'godlygeek/tabular'
     Plug 'plasticboy/vim-markdown'
 "    Plug 'shime/vim-livedown' 
+
+    "Python
+    Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+    "Comment
+    Plug 'preservim/nerdcommenter'
 call plug#end()
 
 set nocompatible
@@ -341,3 +346,48 @@ set conceallevel=2
 
 """""""""""""""""""" Markdown """"""""""""""""""""
 "nmap gm :LivedownToggle<CR>
+
+
+"""""""""""""""""" Prettier """"""""""""""""""
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+""""""""""""" Comment  """""""""""""
+nnoremap <silent> <leader>c} V}:call NERDComment('x', 'toggle')<CR>
+nnoremap <silent> <leader>c{ V{:call NERDComment('x', 'toggle')<CR>
+
+" Create default mappings
+let g:NERDCreateDefaultMappings = 1
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
+
+nmap <C-_> <plug>NERDCommenterToggle
+vmap <C-_> <plug>NERDCommenterToggle
+
+""""""" Pymode  """""""
+nmap <C-f> <nop>
+let g:UltiSnipsExpandTrigger="^["
+nmap <C-f> :PymodeLintAuto<CR>

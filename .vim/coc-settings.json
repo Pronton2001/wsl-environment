@@ -1,10 +1,27 @@
 {
-"languageserver": {
-  "clangd": {
-    "command": "clangd-11",
-    "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
-    "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
-  }
-},
-"python.pythonPath": "/home/pronton/.venv/bin/python"
+    "languageserver": {
+        "clangd": {
+            "command": "clangd-11",
+            "rootPatterns": [
+                "compile_flags.txt",
+                "compile_commands.json"
+            ],
+            "filetypes": [
+                "c",
+                "cc",
+                "cpp",
+                "c++",
+                "objc",
+                "objcpp"
+            ]
+        }
+    },
+    "python.pythonPath": "/home/pronton/.venv/bin/python",
+    "coc.preferences.formatOnSaveFiletypes": [
+        "css",
+        "markdown",
+        "c++",
+        "c",
+        "python",
+    ]
 }
