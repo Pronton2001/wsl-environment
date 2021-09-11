@@ -24,7 +24,7 @@ For example,
     git remote remove [name]: Remove a remote
     git pull <remote> <branch>, i.e git pull buildApp Tri_branch
     git push --set-upstream buildApp master
-    git branch --set-upstream-to=origin/Tri_master  Tri_master2
+    git branch --set-upstream-to=origin/Tri_master Tri_master2
     git push --set-upstream origin Tri_master2 # vua tao branch moi Tri_master2 vua push
 
 
@@ -54,3 +54,56 @@ Fixing using Fetch
     git branch -D tmp            # Delete branch
 
 
+3. Start collaborating on Github
+    $ git clone https://github.com/Pronton2001/ML_from_scratch
+    $ git branch -vv
+    > * main 308273e [origin/main] add random forest
+
+    1)  Keep file up-to-date locally
+        * Make sure in (main)    <--- this (main) is remote
+        * fetch all the code from the remote [origin] and then merge into our 
+        [main] branch
+
+        Example:
+        $ git pull origin main  <--- this [main] is local
+                                 <--- this [origin] or [origin/main] is remote
+        > From https://github.com/Pronton2001/ML_from_scratch
+        > * branch            main       -> FETCH_HEAD
+        > Already up to date. 
+
+    2) Create and move to new branch [branch name], avoid editting the state of  
+    this [master]
+        $ git checkout -b [branch name]
+        
+        Example:
+        $ git checkout -b tri_branch
+        $ git branch -vv
+        > main       308273e [origin/main] add random forest
+        > * tri_branch 308273e add random forest
+
+    3) Change code in this step !!
+        $ git status
+        > On branch tri_branch
+        > Changes not staged for commit:
+        > (use "git add <file>
+        >   ...
+        >   modified:   README.md
+        >   ...
+
+    4) Save and commit code
+        $ git add .
+        $ git commit -m "update README"
+
+    5) Do NOT merge this branch [branch name] into the [main] branch locally. 
+    If not, it will override the [main] branch on the remote reposotory
+        $ git push origin [branch name]
+
+        Example
+        $ git push origin tri_branch
+        > Enumerating objects: 5, done.
+        > Counting objects: 
+        > ...
+        > To https://github.com/Pronton2001/ML_from_scratch.git
+        >  * [new branch]      tri_branch -> tri_branch
+    6) Open Github website and comfirm pull request then merge [branch name]
+    branch into [main] branch
