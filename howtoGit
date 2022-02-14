@@ -107,3 +107,13 @@ Fixing using Fetch
         >  * [new branch]      tri_branch -> tri_branch
     6) Open Github website and comfirm pull request then merge [branch name]
     branch into [main] branch
+
+========================== Undoing Git ========================
+
+Commited but not push yet
+~ git reset <file>
+Pushed 
+~ git reset HEAD~1
+This command jump back 1 commit of the last commit(HEAD)
+Or, 
+~ git reset <code of that commit in log file>

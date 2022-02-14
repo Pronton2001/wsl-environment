@@ -1,15 +1,15 @@
-apt-get install fontforge
-apt-get install fonts-3270
-apt-get fonts-powerline
+apt-get install fontforge (removed)
+apt-get install fonts-3270 (removed)
+apt-get fonts-powerline (removed)
 apt-get clangd-11 
-sudo apt install cmake
+sudo apt install cmake (removed)
 sudo apt install tldr
 sudo apt-get update && sudo apt-get install build-essential
 git clone https://github.com/universal-ctags/ctags.git
 sudo apt install python3-pip
 sudo apt install python3–venv
 sudo apt-get install build-essential gdb
-pip install nbconvert
+pip install nbconvert (removed)
 -------
 Removed:
 adwaita-icon-theme at-spi2-core fontforge-common fonts-cantarell fonts-inconsolata gtk-update-icon-cache hicolor-icon-theme
@@ -23,3 +23,90 @@ sudo apt-get install doxygen
 sudo apt-get install libx11-dev
 sudo apt-get install xorg-dev libglu1-mesa-dev
 sudo apt install mesa-utils
+[removed]sudo apt-get update && sudo apt-get install libopenmpi-dev
+
+[removed] ----
+ibverbs-providers libcaf-openmpi-3 libcoarrays-openmpi-dev libevent-core-2.1-7 libevent-dev
+  libevent-extra-2.1-7 libevent-openssl-2.1-7 libevent-pthreads-2.1-7 libfabric1 libhwloc-dev
+  libhwloc-plugins libhwloc15 libibverbs-dev libibverbs1 libnl-3-200 libnl-3-dev libnl-route-3-200
+  libnl-route-3-dev libnuma-dev libopenmpi3 libpmix2 libprotobuf-dev libprotobuf-lite17
+  libprotobuf17 libprotoc17 libpsm-infinipath1 libpsm2-2 librdmacm1 libxnvctrl0 ocl-icd-libopencl1
+  openmpi-bin openmpi-common
+  ----
+
+## Docker [removed all]
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+## Nodejs for coc.nvim
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash (removed)
+nvm install node (removed)
+
+curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+## CMAKE
+sudo apt  install cmake
+
+## Fix mtcnn
+
+wget https://pypi.python.org/packages/48/69/d87c60746b393309ca30761f8e2b49473d43450b150cb08f3c6df5c11be5/appdirs-1.4.3.tar.gz
+gunzip appdirs-1.4.3.tar.gz
+tar -xvf appdirs-1.4.3.tar
+cd appdirs-1.4.3
+sudo python setup.py install
+
+## Linux Ubuntu download
+
+# Docker
+https://docs.docker.com/engine/install/ubuntu/
+
+# Sticky note
+sudo add-apt-repository ppa:umang/indicator-stickynotes
+
+sudo apt-get update
+
+sudo apt-get install indicator-stickynotes
+
+# OpenMPI and spinningup
+conda create -n spinningup python=3.6
+
+sudo apt-get update && sudo apt-get install libopenmpi-dev
+
+git clone https://github.com/openai/spinningup.git
+cd spinningup
+pip install -e .
+
+## Check Your Install (10 minuntes)
+python -m spinup.run ppo --hid "[32,32]" --env LunarLander-v2 --exp_name installtest --gamma 0.999
+
+# Heroku
+<--sudo snap install --classic heroku-->
+download file zip
+tar -x...
+Add PATH in ~/.profile
+
+# 1.1.1.1
+sudo apt install cloudflare-warp
+## Set up mode
+Download <file>.deb in file Downloads
+sudo apt install cloudflare-warp
+warp-cli set-mode doh
+warp-cli set-mode --help
+curl https://www.cloudflare.com/cdn-cgi/trace/ and verify that warp=on
+
+# ANTLR4
+
+sudo wget https://www.antlr.org/download/antlr-4.9.2-complete.jar
+sudo rm -rf antlr-4.9.2-complete.jar
+cd /usr/local/lib
+sudo curl -O https://www.antlr.org/download/antlr-4.9.2-complete.jar
+export ANTLR_JAR ".:/usr/local/lib/antlr-4.9.2-complete.jar:ANTLR_JAR"
+export ANTLR_JAR ".:/usr/local/lib/antlr-4.9.2-complete.jar:$ANTLR_JAR"
+export ANTLR_JAR= ".:/usr/local/lib/antlr-4.9.2-complete.jar:$ANTLR_JAR"
+export ANTLR_JAR=".:/usr/local/lib/antlr-4.9.2-complete.jar:$ANTLR_JAR"

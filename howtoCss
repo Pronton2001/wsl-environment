@@ -1,0 +1,73 @@
+A. responsive btw web in PC and mobild
+1. @media (min-width:600px){
+}
+
+@media (max-width:600px){
+}
+
+2. Flexbox
+
+# tag {
+display: flex;
+flex-warp :wrap;
+}
+
+# tag {
+display: grid;
+flex-warp :wrap;
+}
+
+3. Bootstrap
+
+B. Sass (.scss) - a CSS extension
+// file variables.scss 
+$vaiable: red;
+ul {
+font: Arial
+color: $color
+}
+
+// Trainslate from scss ->css (Firefox, Chrome cannot understand scss)
+> sass variables.scss:variables.css
+
+// Automate change in variables.scss
+> sass --watch variable.scss:variables.css
+
+C. Selector
+
+ul > il {
+ color: red;
+}
+
+ul il {
+
+}
+
+D. Nest css inside css (in sass only)
+// css:
+// div p {...}
+// div ul{...}
+// sass:
+div {
+   p{...}
+   ul{...}
+}
+
+E. Inheritance (scss)
+
+// share/ inheritance
+%message{
+   font-family: sanspserif;
+   ...
+} 
+
+.suscess{
+   @extend %message;
+   background-color: green;
+}
+
+.error{
+   @extend %message;
+   background-color: red;
+}
+
